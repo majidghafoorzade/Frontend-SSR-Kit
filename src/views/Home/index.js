@@ -1,10 +1,15 @@
 import axios from 'axios';
 import Article from 'components/Article';
+import Helmet from 'react-helmet';
 import styles from './styles.module.scss';
 
 function Home() {
   return (
     <div className={styles.Home}>
+      <Helmet>
+        <title>Home Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Article />
     </div>
   )
