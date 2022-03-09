@@ -1,16 +1,20 @@
 import axios from 'axios';
-import Article from 'components/Article';
+import Headline from 'components/Headline';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 function Home() {
   return (
-    <div className={styles.Home}>
+    <div className="Home">
       <Helmet>
         <title>Home Page</title>
-        <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <Article />
+      <div>Home Page</div>
+      <div>
+        <Headline />
+      </div>
+      <Link to="/about">About</Link>
     </div>
   )
 }

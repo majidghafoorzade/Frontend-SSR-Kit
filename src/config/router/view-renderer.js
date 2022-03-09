@@ -1,12 +1,12 @@
 import { createElement } from 'react';
-import routesList from "config/router";
+import routesList from "config/router/routes";
 import SSRHOC from 'server/utils/SSRHOC';
 
 
 function View({ component }) {
   return (
     <SSRHOC
-      getInitialData={component.getInitialData}
+      getInitialData={component.getInitialData || false}
     >
       {createElement(component, {})}
     </SSRHOC>
