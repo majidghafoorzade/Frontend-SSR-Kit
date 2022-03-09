@@ -9,7 +9,15 @@ server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', async (req, res) => {
-    const { context, rendered, cssLinks, scriptTags, data } = await renderApp(req, res);
+
+    const {
+      context,
+      rendered,
+      cssLinks,
+      scriptTags,
+      data
+    } = await renderApp(req, res);
+
     if (context.url) {
       res.redirect(context.url);
     } else {
@@ -20,6 +28,7 @@ server
         data: JSON.stringify(data),
       });
     }
+
   });
 
 export default server;

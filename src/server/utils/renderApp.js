@@ -5,6 +5,7 @@ import cssLinksFromAssets from 'server/utils/cssLinksFromAssets';
 import jsScriptTagsFromAssets from 'server/utils/jsScriptTagsFromAssets';
 import App from 'App';
 
+
 async function renderApp(req, res) {
 
   const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
@@ -14,7 +15,10 @@ async function renderApp(req, res) {
     context: context
   });
 
-  const { rendered, data } = await frontloadServerRender({
+  const {
+    rendered,
+    data
+  } = await frontloadServerRender({
     frontloadState,
     render: () => renderToString(
       <StaticRouter context={context} location={req.url}>
@@ -23,11 +27,17 @@ async function renderApp(req, res) {
     )
   });
 
-
   const cssLinks = cssLinksFromAssets(assets, 'client');
   const scriptTags = jsScriptTagsFromAssets(assets, 'client', ' defer crossorigin');
 
-  return { context, rendered, cssLinks, scriptTags, data };
+  return {
+    context,
+    rendered,
+    cssLinks,
+    scriptTags,
+    data
+  };
+
 }
 
 export default renderApp;
