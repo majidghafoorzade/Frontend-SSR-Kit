@@ -1,3 +1,4 @@
+import str from "i18n";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 
@@ -5,10 +6,11 @@ function About() {
   return (
     <>
       <Helmet>
-        <title>About Page</title>
+        <title>{str.about}</title>
       </Helmet>
-      <div>About Page</div>
-      <Link to="/">Home</Link>
+
+      <h1>{str.about}</h1>
+      <Link to="/">{str.home}</Link>
     </>
   );
 }
