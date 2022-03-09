@@ -3,6 +3,10 @@ import SSRDataContext from "server/utils/SSRDataContext";
 
 function SSRHOC({ children, getInitialData }) {
 
+  if (!getInitialData) return (
+    <>{children}</>
+  );
+
   const {
     data,
     frontloadMeta
