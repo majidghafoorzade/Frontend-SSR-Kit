@@ -1,26 +1,25 @@
 import axios from 'axios';
-import Headline from 'components/Headline';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
-import styles from './styles.module.scss';
+import str from 'i18n';
+import Card from 'components/Card';
 
 function Home() {
   return (
-    <div className="Home">
+    <>
       <Helmet>
-        <title>Home Page</title>
+        <title>{str.home}</title>
       </Helmet>
-      <div>Home Page</div>
-      <div>
-        <Headline />
-      </div>
-      <Link to="/about">About</Link>
-    </div>
+
+      <Card />
+      <Link to="/about">{str.about}</Link>
+    </>
   )
 }
 
 Home.getInitialData = async function () {
-  let res = await axios.get("https://www.namava.ir/mag/wp-json/wp/v2/posts/74365");
+  let res = await axios
+    .get("https://www.namava.ir/mag/wp-json/wp/v2/posts/74365");
   return {
     title: res.data.title.rendered,
   };
