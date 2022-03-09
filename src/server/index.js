@@ -15,7 +15,10 @@ server
       rendered,
       cssLinks,
       scriptTags,
-      data
+      data,
+      title,
+      meta,
+      link
     } = await renderApp(req, res);
 
     if (context.url) {
@@ -26,6 +29,9 @@ server
         cssLinks: cssLinks,
         scriptTags: scriptTags,
         data: JSON.stringify(data),
+        title,
+        meta,
+        link
       });
     }
 
