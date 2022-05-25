@@ -1,4 +1,4 @@
-import About from 'views/About';
+import Todos from 'views/Todos';
 import Home from 'views/Home';
 
 const routes = [
@@ -8,8 +8,8 @@ const routes = [
     exact: true,
   },
   {
-    component: About,
-    path: '/about',
+    component: Todos,
+    path: '/todos',
     exact: true,
   }
 ];
