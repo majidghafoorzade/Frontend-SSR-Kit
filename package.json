@@ -1,7 +1,11 @@
 {
-  "name": "my-razzle-app",
-  "version": "4.2.15",
+  "name": "react-ssr-starter-kit",
+  "version": "1.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Majid Ghafoorzade",
+    "email": "majidghafoorzade@gmail.com"
+  },
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
